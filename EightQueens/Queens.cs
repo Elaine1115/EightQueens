@@ -27,7 +27,7 @@ namespace EightQueens
             if (row == n)
             {
                 sloutions++;
-                PrintAllSolutions();
+                PrintSolution();
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace EightQueens
                 // 取得prevCol的Queen位置
                 int prevCol = queens[prevRow];
 
-                // 和當前的位置相同 或 在對角線上
+                // 和當前位置在同一欄 或 在對角線上
                 if (prevCol == col || Math.Abs(prevRow - row) == Math.Abs(prevCol - col))
                 {
                     return false;
@@ -60,7 +60,7 @@ namespace EightQueens
             return true;
         }
 
-        private void PrintAllSolutions()
+        private void PrintSolution()
         {
             for (int i = 0; i < n; i++)
             {
